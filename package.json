@@ -1,0 +1,22 @@
+{
+  "name": "contract-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "nyc mocha --timeout=3000 --exit",
+    "lint": "eslint **/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chalk": "^2.4.1",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "ipfs": "^0.28.2",
+    "ipfs-api": "^20.2.1",
+    "orbit-db": "^0.19.7"
+  }
+}
