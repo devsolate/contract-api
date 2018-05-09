@@ -5,6 +5,7 @@ const OrbitDB = require('orbit-db')
 const ipfs = new IPFS()
 const dbName = 'contract.users'
 const orbitdb = new OrbitDB(ipfs)
+const FriendBot = require('../utils/friendbot')
 
 const add = (email, name, address) => {
     return new Promise(async (resolve, reject) => {
@@ -20,8 +21,10 @@ const add = (email, name, address) => {
                     name: name, 
                     address: address
                 })
+                
+                await FriendBot.fund(address)
                 const profile = await db.get(email)
-                resolve(result)
+                resolve(profile)
             } else {
                 reject("user exist")
             }
