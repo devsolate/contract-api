@@ -3,6 +3,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/', require('./ipfs/ipfs.route'));
+router.use('/', require('./user/user.route'));
 
 module.exports = router;
