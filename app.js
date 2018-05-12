@@ -3,9 +3,11 @@ const Constants = require('./src/constants');
 const bodyParser = require('body-parser');
 const ApiRouter = require('./src/router');
 const chalk = require('chalk');
+var cors = require('cors')
 
 const app = express();
 
+app.use(cors())
 app.set('host', Constants.HOST || '0.0.0.0');
 app.set('port', Constants.PORT || 8080);
 app.use(bodyParser.json());
